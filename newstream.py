@@ -32,7 +32,7 @@ def main():
     ])
 
     # Create a list of dummy data
-    data = []
+    data = [  {"Berita": "python", "HasilNB": "numpy", "HasilSVM": "REXY"},]
 
     # Create a DataFrame from the dummy data
     dataframe = session.create_dataframe(data, schema=schema)
@@ -40,8 +40,7 @@ def main():
     # Collect the results to display in Streamlit
     results = dataframe.collect()
 
-    # Display the results in Streamlit
-    st.write("Filtered DataFrame (only Python packages):")
+    # Display the results in Streamlit]
     st.dataframe(results)
 
     # Close the session
