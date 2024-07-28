@@ -27,8 +27,7 @@ def main():
     # Define the schema for the dummy data
     schema = StructType([
         StructField("Berita", StringType()),
-        StructField("HasilNB", StringType()),
-        StructField("HasilSVM", StringType())
+        StructField("HasilNB", StringType())
     ])
 
     # Create a list of dummy data
