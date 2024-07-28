@@ -32,7 +32,7 @@ def main():
     ])
 
     # Create a list of dummy data
-    data = [  {"Berita": "python", "HasilNB": "numpy"}]
+    data = []
 
     # Create a DataFrame from the dummy data
     dataframe = session.create_dataframe(data, schema=schema)
