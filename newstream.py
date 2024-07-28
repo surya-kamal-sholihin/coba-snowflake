@@ -27,11 +27,12 @@ def main():
     # Define the schema for the dummy data
     schema = StructType([
         StructField("Berita", StringType()),
-        StructField("HasilNB", StringType())
+        StructField("HasilNB", StringType()),
+        StructField("HasilSVM", StringType())
     ])
 
     # Create a list of dummy data
-    data = [  {"Berita": "python", "HasilNB": "numpy", "HasilSVM": "REXY"},]
+    data = [  {"Berita": "python", "HasilNB": "numpy"}]
 
     # Create a DataFrame from the dummy data
     dataframe = session.create_dataframe(data, schema=schema)
