@@ -26,27 +26,19 @@ def main():
 
     # Define the schema for the dummy data
     schema = StructType([
-        StructField("language", StringType()),
-        StructField("package_name", StringType())
+        StructField("Berita", StringType()),
+        StructField("HasilNB", StringType()),
+        StructField("HasilSVM", StringType())
     ])
 
     # Create a list of dummy data
-    data = [
-        {"language": "python", "package_name": "numpy"},
-        {"language": "python", "package_name": "pandas"},
-        {"language": "javascript", "package_name": "react"},
-        {"language": "java", "package_name": "spring"},
-        {"language": "python", "package_name": "scikit-learn"}
-    ]
+    data = []
 
     # Create a DataFrame from the dummy data
     dataframe = session.create_dataframe(data, schema=schema)
-
-    # Filter the DataFrame to include only rows where language is 'python'
-    filtered_dataframe = dataframe.filter(col("language") == 'python')
-
+    
     # Collect the results to display in Streamlit
-    results = filtered_dataframe.collect()
+    results = dataframe.collect()
 
     # Display the results in Streamlit
     st.write("Filtered DataFrame (only Python packages):")
